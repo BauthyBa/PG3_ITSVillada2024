@@ -2,8 +2,8 @@ while True:
     try:
         num1 = int(input("Ingrese el primer numero entero: "))
         num2 = int(input("Ingrese el segundo numero entero: "))
-        suma = num1 + num2
-        print("La suma de", num1, "y", num2, "es:", suma)
+        suma = num1 / num2
+        print("La division de", num1, "y", num2, "es:", suma)
 
         while True:
             opcion = input("¿Desea seguir sumando valores? (1: si - 0: No): ")

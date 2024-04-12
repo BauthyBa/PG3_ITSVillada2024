@@ -2,7 +2,7 @@ while True:
     try:
         num1 = int(input("Ingrese el primer numero entero: "))
         num2 = int(input("Ingrese el segundo numero entero: "))
-        suma = num1 + num2
+        suma = num1 / num2
         print("La suma de", num1, "y", num2, "es:", suma)
 
         while True:
