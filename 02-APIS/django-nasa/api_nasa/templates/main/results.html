@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extend_nav %} 
+<ul class="nav nav-tabs sidenav">
+	<li class="nav-item">
+	  <a class="nav-link" aria-current="page" href="{% url 'main:home' %}">Home</a>
+	</li>
+	<li class="nav-item">
+	  <a class="nav-link active" aria-current="page" href="javascript:void(0)">Resultado</a>
+	</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<center><h3 id="map">     Django NASA API - Resultado</h3>
+<div class="container">
+	<h4>Resultado de la API:</h4>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Categoria</th>
+				<th scope="col">Descripcion</th>
+				<th scope="col">Imagen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><b>"{{ cat }}"</b></td>
+				<td>{{ results.text }}</td>
+				<td><img src="{{ results.image }}" style="width: 100px; height: auto"></td>
+			</tr>
+		</tbody>
+	</table>
+</div></center>
+{% endblock %}

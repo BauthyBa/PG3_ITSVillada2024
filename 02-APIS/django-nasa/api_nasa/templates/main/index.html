@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extend_nav %} 
+<center><ul class="nav nav-tabs sidenav">
+	<li class="nav-item">
+	  <a class="nav-link active" aria-current="page" href="javascript:void(0)">Home</a>
+	</li>
+	<li class="nav-item">
+	  <a class="nav-link " aria-current="page" href="{% url 'main:home' %}">Resultado</a>
+	</li>
+</ul></center>
+{% endblock %}
+
+
+{% block content %}
+<center><h3 id="subtitle">Proyecto Django - NASA API</h3>
+<div class="container">
+	<form id="apiform" method="POST" action="/">
+    {% csrf_token %}
+    	<label for="username">Seleccionar Categoria</label>
+    	<select name="cat" id="cat">
+    		<option selected value="">Sellecione una</option>
+		  	<option value="apod">Imagen Astronomica del dia (APOD)</option>
+		  	<option value="mars">Fotos de Marte</option>
+ 		</select>
+
+		<div id="date-field" style="display: none;">
+            <label for="date">Selecciona una fecha:</label>
+            <input type="date" name="date" id="date">
+        </div>
+		<div>
+			<hr>
+		</div>
+		<div>
+			<button type="submit">Ver Imagen</button>
+		</div>
+	</form></center>
+	<script>
+        const catSelect = document.getElementById('cat');
+        const dateField = document.getElementById('date-field');
+
+        catSelect.addEventListener('change', function() {
+            if (this.value === 'apod') {
+                dateField.style.display = 'block';
+            } else {
+                dateField.style.display = 'none';
+            }
+        });
+    </script>
+</div>
+{% endblock %}

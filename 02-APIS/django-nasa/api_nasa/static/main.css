@@ -1,0 +1,10 @@
+body {
+    background-color: beige;
+    margin: 30px;
+    padding: 30px;
+}
+
+#id {
+    font-size: xx-large;
+    color: pink;
+}
